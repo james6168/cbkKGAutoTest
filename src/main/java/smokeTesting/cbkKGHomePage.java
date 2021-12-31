@@ -35,6 +35,11 @@ public class cbkKGHomePage {
     //===================================================================================================
     By cbkHomePageATMLink = By.xpath("//*[@id=\"top_right_menu\"]/li/a");
     //===================================================================================================
+    By cbkHomePageHomePageButton = By.xpath("//*[@id=\"header\"]/div[1]/div[2]/a/img");
+    //===================================================================================================
+    By cbkHomePageLanguageLinkContainer = By.xpath("//*[@id=\"header\"]/div[1]/div[1]");
+    //===================================================================================================
+
     public cbkKGHomePage (WebDriver driver) {
         this.driver = driver;
     }
@@ -200,5 +205,24 @@ public class cbkKGHomePage {
         driver.findElement(cbkHomePageATMLink).click();
         String nameOfATMTables = driver.findElement(By.xpath("//*[@id=\"map-items-list\"]/h2")).getText();
         Assert.assertEquals(nameOfATMTables, "БАНКОМАТЫ, ОБСЛУЖИВАЮЩИЕ КАРТЫ ЭЛКАРТ, ЗОЛОТАЯ КОРОНА, VISA, MASTERCARD, МИР И CHINA UNION PAY:");
+    }
+
+    public void cbkHomePageHomePageButtonSmokeTesting () {
+        driver.findElement(cbkHomePageHomePageButton).click();
+        String pageAssertion = driver.getTitle();
+        Assert.assertEquals(pageAssertion, "Коммерческий банк КЫРГЫЗСТАН");
+    }
+
+    public void cbkHomePageLanguageLinksSmokeTesting () {
+        String homePageTitle = driver.getTitle();
+        boolean pagesComparisonAssertion;
+        String countOfElementsString = driver.findElement(cbkHomePageLanguageLinkContainer).getAttribute("childElementCount");
+        int countOfElementsInteger = Integer.parseInt(countOfElementsString);
+        for (int i = 1; i <= countOfElementsInteger; i++) {
+            driver.findElement(By.xpath("//*[@id=\"header\"]/div[1]/div[1]/a["+i+"]")).click();
+            String nextPageTitle = driver.getTitle();
+            pagesComparisonAssertion = (homePageTitle != nextPageTitle);
+            Assert.assertEquals(pagesComparisonAssertion, true);
+        }
     }
 }

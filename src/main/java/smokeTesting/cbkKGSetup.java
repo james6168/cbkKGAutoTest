@@ -121,9 +121,24 @@ public class cbkKGSetup {
         objcbkKGHomePage.cbkHomePageSliderSmokeTesting();
     }
 
-    @Test
+    @Test   //Smoke-тестирование ссылки "Карта банкоматов".
+            //Данный автотест проверяет переход по ссылке на страницу с картой банкоматов.
     public void cbkHomePageATMLinkSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageAtmLinkSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование кнопки домашней страницы в виде логотипа банка "Коммерческий банк - КЫРГЫЗСТАН".
+            //Данный автотест проверяет переход на главную страницу при нажатии на кнопку.
+    public void cbkHomePageHomePageButtonSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageHomePageButtonSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование кнопок смены языков домашней страницы сайта cbk.kg
+            //Данный автотест проверяет сменяемость языков при нажатии на ссылки языков на домашней странице сайта cbk.kg
+    public void cbkHomePageLanguageLinkSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageLanguageLinksSmokeTesting();
     }
 }
