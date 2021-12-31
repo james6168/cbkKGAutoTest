@@ -157,9 +157,51 @@ public class cbkKGSetup {
     }
 
     @Test   //Smoke-тестирование кнопки "Золото" домашней страницы cbk.kg.
-    //Данный автотест проверяет обновление элементов талицы при нажатии на кнопку "Золото".
+            //Данный автотест проверяет обновление элементов талицы при нажатии на кнопку "Золото".
     public void cbkHomePageGoldTabTableSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageGoldTabTableSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование ссылки "Кредиты" домашней страницы cbk.kg.
+            //Данный автотест проверяет переход по ссылке при нажатии на ссылку "Кредиты".
+    public void cbkHomePageLoanLinkSmokeTesing () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageLoanLinkSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование ссылки "Переводы из России" домашней страницы cbk.kg.
+    //Данный автотест проверяет переход по ссылке при нажатии на ссылку "Переводы из России".
+    public void cbkHomePageSberBankSmokeLinkTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageSberBankLinkSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование ссылки "Платёжные карты" домашней страницы cbk.kg.
+    //Данный автотест проверяет переход по ссылке при нажатии на ссылку "Платёжные карты".
+    public void cbkHomePagePaymentsCardsLinkSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePagePaymentsCardsLinkSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование ссылки "Рассрочка" домашней страницы cbk.kg.
+    //Данный автотест проверяет переход по ссылке при нажатии на ссылку "Рассрочка".
+    public void cbkHomePagePaymentByInstallmentsLinkSmokeTesing () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePagePaymentByInstallmentsLinkSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование ссылки "MBANK ONLINE" домашней страницы cbk.kg.
+    //Данный автотест проверяет переход по ссылке при нажатии на ссылку "MBANK ONLINE".
+    public void cbkHomePageMBankOnlineLinkSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageMBankOnlineLinkSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование ссылки "С карты на карту" домашней страницы cbk.kg.
+    //Данный автотест проверяет переход по ссылке при нажатии на ссылку "С карты на карту".
+    public void cbkHomePageTransferLinkSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageTransferLinkSmokeTesting();
     }
 }

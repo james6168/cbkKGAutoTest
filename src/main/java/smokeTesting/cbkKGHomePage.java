@@ -44,7 +44,13 @@ public class cbkKGHomePage {
     By cbkHomePageFaresTabButton = By.xpath("//*[@id=\"home-switcher\"]/button[2]");
     By cbkHomePageGoldTabButton = By.xpath("//*[@id=\"home-switcher\"]/button[3]");
     //===================================================================================================
-
+    By cbkHomePageLoanLink = By.xpath("//*[@id=\"tiles\"]/div[2]/a/div");
+    By cbkHomePageMBankOnlineLink = By.xpath("//*[@id=\"tiles\"]/div[2]/div[2]/a/div");
+    By cbkHomePageSberBankLink = By.xpath("//*[@id=\"tiles\"]/div[3]/a[1]/div");
+    By cbkHomePagePaymentsCardsLink = By.xpath("//*[@id=\"tiles\"]/div[4]/div[1]/a/div");
+    By cbkHomePagePaymentByInstallments = By.xpath("//*[@id=\"tiles\"]/div[4]/a/div");
+    By cbkHomePageTransferLink = By.xpath("//*[@id=\"tiles\"]/div[3]/a[2]/div");
+    //===================================================================================================
 
     public cbkKGHomePage (WebDriver driver) {
         this.driver = driver;
@@ -269,6 +275,90 @@ public class cbkKGHomePage {
             String buttonStatusActive = driver.findElement(cbkHomePageGoldTabButton).getDomAttribute("class");
             statusAssertion = (buttonStatusInactive != buttonStatusActive);
             Assert.assertEquals(statusAssertion, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePageLoanLinkSmokeTesting() {
+        try {
+            String actualTitle = driver.getTitle();
+            boolean titleAssertion;
+            driver.findElement(cbkHomePageLoanLink).click();
+            Thread.sleep(1000);
+            String nextTitle = driver.getTitle();
+            titleAssertion = (actualTitle != nextTitle);
+            Assert.assertEquals(titleAssertion, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePageSberBankLinkSmokeTesting() {
+        try {
+            String actualTitle = driver.getTitle();
+            boolean titleAssertion;
+            driver.findElement(cbkHomePageSberBankLink).click();
+            Thread.sleep(1000);
+            String nextTitle = driver.getTitle();
+            titleAssertion = (actualTitle != nextTitle);
+            Assert.assertEquals(titleAssertion, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePageMBankOnlineLinkSmokeTesting() {
+        try {
+            String actualTitle = driver.getTitle();
+            boolean titleAssertion;
+            driver.findElement(cbkHomePageMBankOnlineLink).click();
+            Thread.sleep(1000);
+            String nextTitle = driver.getTitle();
+            titleAssertion = (actualTitle != nextTitle);
+            Assert.assertEquals(titleAssertion, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePagePaymentsCardsLinkSmokeTesting() {
+        try {
+            String actualTitle = driver.getTitle();
+            boolean titleAssertion;
+            driver.findElement(cbkHomePagePaymentsCardsLink).click();
+            Thread.sleep(1000);
+            String nextTitle = driver.getTitle();
+            titleAssertion = (actualTitle != nextTitle);
+            Assert.assertEquals(titleAssertion, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePagePaymentByInstallmentsLinkSmokeTesting() {
+        try {
+            String actualTitle = driver.getTitle();
+            boolean titleAssertion;
+            driver.findElement(cbkHomePagePaymentByInstallments).click();
+            Thread.sleep(1000);
+            String nextTitle = driver.getTitle();
+            titleAssertion = (actualTitle != nextTitle);
+            Assert.assertEquals(titleAssertion, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePageTransferLinkSmokeTesting() {
+        try {
+            String actualTitle = driver.getTitle();
+            boolean titleAssertion;
+            driver.findElement(cbkHomePageTransferLink).click();
+            Thread.sleep(1000);
+            String nextTitle = driver.getTitle();
+            titleAssertion = (actualTitle != nextTitle);
+            Assert.assertEquals(titleAssertion, true);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
