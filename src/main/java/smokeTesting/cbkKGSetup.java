@@ -204,4 +204,20 @@ public class cbkKGSetup {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageTransferLinkSmokeTesting();
     }
+
+    @Test   //Smoke-тестирование ссылок раздела "Новости" домашней страницы cbk.kg.
+            //Данный автотест проверяет переходы по каждой ссылке новостей при нажатии.
+    public void cbkHomePageNewsListSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageNewsListSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование ссылок раздела "Вакансии" домашней страницы cbk.kg.
+            //Данный автотест проверяет переходы по каждой ссылке новостей при нажатии.
+    public void cbkHomePageVacanciesListSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageVacanciesListSmokeTesting();
+    }
+
+
 }

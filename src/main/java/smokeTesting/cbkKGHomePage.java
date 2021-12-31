@@ -51,6 +51,11 @@ public class cbkKGHomePage {
     By cbkHomePagePaymentByInstallments = By.xpath("//*[@id=\"tiles\"]/div[4]/a/div");
     By cbkHomePageTransferLink = By.xpath("//*[@id=\"tiles\"]/div[3]/a[2]/div");
     //===================================================================================================
+    By cbkHomePageNewsList = By.xpath("//*[@id=\"content\"]/div/div[3]/div[2]/ul");
+    By cbkHomePageVacanciesList = By.xpath("//*[@id=\"content\"]/div/div[3]/div[3]/ul");
+    //===================================================================================================
+
+
 
     public cbkKGHomePage (WebDriver driver) {
         this.driver = driver;
@@ -359,6 +364,44 @@ public class cbkKGHomePage {
             String nextTitle = driver.getTitle();
             titleAssertion = (actualTitle != nextTitle);
             Assert.assertEquals(titleAssertion, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePageNewsListSmokeTesting () {
+        try {
+            boolean pagesComparison;
+            String actualPageTitle = driver.getTitle();
+            String countOfElementsString = driver.findElement(cbkHomePageNewsList).getAttribute("childElementCount");
+            int countOfElementsInteger = Integer.parseInt(countOfElementsString);
+            for (int i = 1; i < countOfElementsInteger; i++) {
+                driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[3]/div[2]/ul/li["+i+"]/a")).click();
+                Thread.sleep(1000);
+                String nextPageTitle = driver.getTitle();
+                pagesComparison = (actualPageTitle != nextPageTitle);
+                Assert.assertEquals(pagesComparison, true);
+                driver.get("https://cbk.kg/ru");
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePageVacanciesListSmokeTesting () {
+        try {
+            boolean pagesComparison;
+            String actualPageTitle = driver.getTitle();
+            String countOfElementsString = driver.findElement(cbkHomePageVacanciesList).getAttribute("childElementCount");
+            int countOfElementsInteger = Integer.parseInt(countOfElementsString);
+            for (int i = 1; i < countOfElementsInteger; i++) {
+                driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[3]/div[3]/ul/li["+i+"]/a")).click();
+                String nextPageTitle = driver.getTitle();
+                pagesComparison = (actualPageTitle != nextPageTitle);
+                Assert.assertEquals(pagesComparison, true);
+                Thread.sleep(500);
+                driver.get("https://cbk.kg/ru");
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
