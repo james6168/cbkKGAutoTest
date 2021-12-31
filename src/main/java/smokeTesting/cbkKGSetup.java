@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-//С этого класса будет осуществляться запуск отдельных тестов.
+            //С этого класса будет осуществляться запуск отдельных тестов.
 public class cbkKGSetup {
     WebDriver driver;
     cbkKGHomePage objcbkKGHomePage;
@@ -20,71 +20,71 @@ public class cbkKGSetup {
         driver.get("https://cbk.kg/");
     }
 
-    @Test // Smoke-тестирование поля поиска на главной странице cbk.kg
+    @Test   // Smoke-тестирование поля поиска на главной странице cbk.kg
     public void cbkHomePageSmokeSearchFieldTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageSmokeSearchFieldTesting();
     }
 
-    @Test //Тест на граничные значения поля поиска (search field).
-    // Данный автотест вводит определённый текст и проверяет корректность работы поиска на сайте cbk.kg
+    @Test   //Тест на граничные значения поля поиска (search field).
+            // Данный автотест вводит определённый текст и проверяет корректность работы поиска на сайте cbk.kg
     public void cbkHomePageSearchFieldBoundaryValuesTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageSearchFieldBoundaryValuesTesting();
     }
 
-    @Test //Тест на ввод негативных значений поля потска.
-    // Данный автотест проверяет работу поискового поля (search field) в условиях ввода некорректных данных.
+    @Test   //Тест на ввод негативных значений поля потска.
+            // Данный автотест проверяет работу поискового поля (search field) в условиях ввода некорректных данных.
     public void cbkHomePageSearchFieldNegativeValuesTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageSearchFieldNegativeValuesTesting();
     }
 
-    @Test //Тест на Smoke-тестирование дропдауна "Юридичсеким лицам" на главной странице cbk.kg.
-    // Данный автотест проверяет количество прогруженных элементов дропдауна "Юридическим лицам", элементов в списке дропдауна должно быть 12.
+    @Test   //Тест на Smoke-тестирование дропдауна "Юридичсеким лицам" на главной странице cbk.kg.
+            // Данный автотест проверяет количество прогруженных элементов дропдауна "Юридическим лицам", элементов в списке дропдауна должно быть 12.
     public void cbkHomePageDropDown1SmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageDropDown1SmokeTesting();
     }
 
-    @Test //Тест на Smoke-тестирование дропдауна "Частным лицам" на главной странице cbk.kg.
-    // Данный автотест проверяет количество прогруженных элементов дропдауна "Частным лицам", элементов в списке дропдауна должно быть 14.
+    @Test   //Тест на Smoke-тестирование дропдауна "Частным лицам" на главной странице cbk.kg.
+            // Данный автотест проверяет количество прогруженных элементов дропдауна "Частным лицам", элементов в списке дропдауна должно быть 14.
     public void cbkHomePageDropDown2SmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageDropDown2SmokeTesting();
     }
 
-    @Test //Тест на Smoke-тестирование дропдауна "О банке" на главной странице cbk.kg.
-    // Данный автотест проверяет количество прогруженных элементов дропдауна "О банке", элементов в списке дропдауна должно быть 10.
+    @Test   //Тест на Smoke-тестирование дропдауна "О банке" на главной странице cbk.kg.
+            // Данный автотест проверяет количество прогруженных элементов дропдауна "О банке", элементов в списке дропдауна должно быть 10.
     public void cbkHomePageDropDown3SmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageDropDown3SmokeTesting();
     }
 
-    @Test // Smoke тестирование ссылки "Контакты" на главной странице cbk.kg.
-    // Данный автотест проверяет переход по ссылке на страницу "Контакты - Коммерческий банк КЫРГЫЗСТАН".
+    @Test   // Smoke тестирование ссылки "Контакты" на главной странице cbk.kg.
+            // Данный автотест проверяет переход по ссылке на страницу "Контакты - Коммерческий банк КЫРГЫЗСТАН".
     public void cbkHomePageLink1SmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageLink1SmokeTesting();
     }
 
-    @Test // Smoke тестирование ссылки "Реализация имущества" на главной странице cbk.kg.
-    // Данный автотест проверяет переход по ссылке на страницу "Реализуемое имущество - Коммерческий банк КЫРГЫЗСТАН".
+    @Test   // Smoke тестирование ссылки "Реализация имущества" на главной странице cbk.kg.
+            // Данный автотест проверяет переход по ссылке на страницу "Реализуемое имущество - Коммерческий банк КЫРГЫЗСТАН".
     public void cbkHomePageLink2SmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageLink2SmokeTesting();
     }
 
-    @Test // Smoke тестирование ссылки "Документы" на главной странице cbk.kg.
-    // Данный автотест проверяет переход по ссылке на страницу "Документы - Коммерческий банк КЫРГЫЗСТАН".
+    @Test   // Smoke тестирование ссылки "Документы" на главной странице cbk.kg.
+            // Данный автотест проверяет переход по ссылке на страницу "Документы - Коммерческий банк КЫРГЫЗСТАН".
     public void cbkHomePageLink3SmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageLink3SmokeTesting();
     }
 
 
-    @Test // Smoke тестирование ссылки "Тендеры" на главной странице cbk.kg.
-    // Данный автотест проверяет переход по ссылке на страницу "Коммерческий банк КЫРГЫЗСТАН - кредиты, депозиты, открытие счета, карты VISA и денежные переводы".
+    @Test   // Smoke тестирование ссылки "Тендеры" на главной странице cbk.kg.
+            // Данный автотест проверяет переход по ссылке на страницу "Коммерческий банк КЫРГЫЗСТАН - кредиты, депозиты, открытие счета, карты VISA и денежные переводы".
     public void cbkHomePageLink4SmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageLink4SmokeTesting();
@@ -107,7 +107,7 @@ public class cbkKGSetup {
     }
 
     @Test   //Smoke-тестирование ссылок дропдауна "О банке".
-    // Данный автотест кликает по всем ссылкам, находящимся в дропдауне.
+            // Данный автотест кликает по всем ссылкам, находящимся в дропдауне.
     public void cbkHomePageDropDown3ListChecking () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageDropDown3LinksOfMenuSmokeTesting();
@@ -150,7 +150,7 @@ public class cbkKGSetup {
     }
 
     @Test   //Smoke-тестирование кнопки "Обезналичивание" домашней страницы cbk.kg.
-    //Данный автотест проверяет обновление элементов талицы при нажатии на кнопку "Обезналичивание".
+            //Данный автотест проверяет обновление элементов талицы при нажатии на кнопку "Обезналичивание".
     public void cbkHomePageFaresTabTableSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageFaresTabTableSmokeTesting();
@@ -171,35 +171,35 @@ public class cbkKGSetup {
     }
 
     @Test   //Smoke-тестирование ссылки "Переводы из России" домашней страницы cbk.kg.
-    //Данный автотест проверяет переход по ссылке при нажатии на ссылку "Переводы из России".
+            //Данный автотест проверяет переход по ссылке при нажатии на ссылку "Переводы из России".
     public void cbkHomePageSberBankSmokeLinkTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageSberBankLinkSmokeTesting();
     }
 
     @Test   //Smoke-тестирование ссылки "Платёжные карты" домашней страницы cbk.kg.
-    //Данный автотест проверяет переход по ссылке при нажатии на ссылку "Платёжные карты".
+            //Данный автотест проверяет переход по ссылке при нажатии на ссылку "Платёжные карты".
     public void cbkHomePagePaymentsCardsLinkSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePagePaymentsCardsLinkSmokeTesting();
     }
 
     @Test   //Smoke-тестирование ссылки "Рассрочка" домашней страницы cbk.kg.
-    //Данный автотест проверяет переход по ссылке при нажатии на ссылку "Рассрочка".
+            //Данный автотест проверяет переход по ссылке при нажатии на ссылку "Рассрочка".
     public void cbkHomePagePaymentByInstallmentsLinkSmokeTesing () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePagePaymentByInstallmentsLinkSmokeTesting();
     }
 
     @Test   //Smoke-тестирование ссылки "MBANK ONLINE" домашней страницы cbk.kg.
-    //Данный автотест проверяет переход по ссылке при нажатии на ссылку "MBANK ONLINE".
+            //Данный автотест проверяет переход по ссылке при нажатии на ссылку "MBANK ONLINE".
     public void cbkHomePageMBankOnlineLinkSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageMBankOnlineLinkSmokeTesting();
     }
 
     @Test   //Smoke-тестирование ссылки "С карты на карту" домашней страницы cbk.kg.
-    //Данный автотест проверяет переход по ссылке при нажатии на ссылку "С карты на карту".
+            //Данный автотест проверяет переход по ссылке при нажатии на ссылку "С карты на карту".
     public void cbkHomePageTransferLinkSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageTransferLinkSmokeTesting();
