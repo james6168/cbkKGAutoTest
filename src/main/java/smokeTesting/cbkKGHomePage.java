@@ -3,6 +3,7 @@ package smokeTesting;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -39,6 +40,11 @@ public class cbkKGHomePage {
     //===================================================================================================
     By cbkHomePageLanguageLinkContainer = By.xpath("//*[@id=\"header\"]/div[1]/div[1]");
     //===================================================================================================
+    By cbkHomePageCashRatingTableButton = By.xpath("//*[@id=\"home-switcher\"]/button[1]");
+    By cbkHomePageFaresTabButton = By.xpath("//*[@id=\"home-switcher\"]/button[2]");
+    By cbkHomePageGoldTabButton = By.xpath("//*[@id=\"home-switcher\"]/button[3]");
+    //===================================================================================================
+
 
     public cbkKGHomePage (WebDriver driver) {
         this.driver = driver;
@@ -223,6 +229,48 @@ public class cbkKGHomePage {
             String nextPageTitle = driver.getTitle();
             pagesComparisonAssertion = (homePageTitle != nextPageTitle);
             Assert.assertEquals(pagesComparisonAssertion, true);
+        }
+    }
+
+    public void cbkHomePageCashRatingTableSmokeTesting () {
+        try {
+            boolean statusAssertion;
+            String buttonStatusInactive = driver.findElement(cbkHomePageCashRatingTableButton).getDomAttribute("class");
+            driver.findElement(cbkHomePageCashRatingTableButton).click();
+            Thread.sleep(1000);
+            String buttonStatusActive = driver.findElement(cbkHomePageCashRatingTableButton).getDomAttribute("class");
+            statusAssertion = (buttonStatusInactive != buttonStatusActive);
+            Assert.assertEquals(statusAssertion, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePageFaresTabTableSmokeTesting () {
+        try {
+            boolean statusAssertion;
+            String buttonStatusInactive = driver.findElement(cbkHomePageFaresTabButton).getDomAttribute("class");
+            driver.findElement(cbkHomePageFaresTabButton).click();
+            Thread.sleep(1000);
+            String buttonStatusActive = driver.findElement(cbkHomePageFaresTabButton).getDomAttribute("class");
+            statusAssertion = (buttonStatusInactive != buttonStatusActive);
+            Assert.assertEquals(statusAssertion, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePageGoldTabTableSmokeTesting () {
+        try {
+            boolean statusAssertion;
+            String buttonStatusInactive = driver.findElement(cbkHomePageGoldTabButton).getDomAttribute("class");
+            driver.findElement(cbkHomePageGoldTabButton).click();
+            Thread.sleep(1000);
+            String buttonStatusActive = driver.findElement(cbkHomePageGoldTabButton).getDomAttribute("class");
+            statusAssertion = (buttonStatusInactive != buttonStatusActive);
+            Assert.assertEquals(statusAssertion, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

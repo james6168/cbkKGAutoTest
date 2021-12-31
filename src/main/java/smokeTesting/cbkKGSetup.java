@@ -141,4 +141,25 @@ public class cbkKGSetup {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageLanguageLinksSmokeTesting();
     }
+
+    @Test   //Smoke-тестирование кнопки "Курсы валют" домашней страницы cbk.kg.
+            //Данный автотест проверяет обновление элементов талицы при нажатии на кнопку "Курсы валют".
+    public void cbkHomePageCashRatingTableSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageCashRatingTableSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование кнопки "Обезналичивание" домашней страницы cbk.kg.
+    //Данный автотест проверяет обновление элементов талицы при нажатии на кнопку "Обезналичивание".
+    public void cbkHomePageFaresTabTableSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageFaresTabTableSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование кнопки "Золото" домашней страницы cbk.kg.
+    //Данный автотест проверяет обновление элементов талицы при нажатии на кнопку "Золото".
+    public void cbkHomePageGoldTabTableSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageGoldTabTableSmokeTesting();
+    }
 }
