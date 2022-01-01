@@ -70,184 +70,322 @@ public class cbkKGHomePage {
     }
 
     public void cbkHomePageSmokeSearchFieldTesting () {
-        driver.findElement(cbkHomePageSearchField).sendKeys("Кредит", Keys.ENTER);
-        String searchResultAssertion = driver.findElement(cbkHomePageSearchResult).getText();
-        Assert.assertEquals(searchResultAssertion, "РЕЗУЛЬТАТЫ ПОИСКА");
+        try {
+            driver.findElement(cbkHomePageSearchField).sendKeys("Кредит", Keys.ENTER);
+            String searchResultAssertion = driver.findElement(cbkHomePageSearchResult).getText();
+            Assert.assertEquals(searchResultAssertion, "РЕЗУЛЬТАТЫ ПОИСКА");
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageSearchFieldBoundaryValuesTesting () {
-        driver.findElement(cbkHomePageSearchField).sendKeys("Кредиты очень плохо влияют на ваше финсовое здоровье! Беря ипотеку на несколько лет, имейте в виду, что вы сознательно лишаете себя будущего, особенно учитывая тот факт, что проценты в этом банке свирепые.", Keys.ENTER);
-        String searchResultAssertion = driver.findElement(cbkHomePageSearchResult).getText();
-        Assert.assertEquals(searchResultAssertion, "НИЧЕГО НЕ НАЙДЕНО");
+        try {
+            driver.findElement(cbkHomePageSearchField).sendKeys("Кредиты очень плохо влияют на ваше финсовое здоровье! Беря ипотеку на несколько лет, имейте в виду, что вы сознательно лишаете себя будущего, особенно учитывая тот факт, что проценты в этом банке свирепые.", Keys.ENTER);
+            String searchResultAssertion = driver.findElement(cbkHomePageSearchResult).getText();
+            Assert.assertEquals(searchResultAssertion, "НИЧЕГО НЕ НАЙДЕНО");
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageSearchFieldNegativeValuesTesting () {
-        driver.findElement(cbkHomePageSearchField).sendKeys("***///Ты дур**//к, если ты берёшь *-кредит** в этом @банке/*/*/*////?????", Keys.ENTER);
-        String searchResultAssertion = driver.findElement(cbkHomePageSearchResult).getText();
-        Assert.assertEquals(searchResultAssertion, "НИЧЕГО НЕ НАЙДЕНО");
+        try {
+            driver.findElement(cbkHomePageSearchField).sendKeys("***///Ты дур**//к, если ты берёшь *-кредит** в этом @банке/*/*/*////?????", Keys.ENTER);
+            String searchResultAssertion = driver.findElement(cbkHomePageSearchResult).getText();
+            Assert.assertEquals(searchResultAssertion, "НИЧЕГО НЕ НАЙДЕНО");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageDropDown1SmokeTesting () {
-        driver.findElement(cbkHomePageDropDown1).click();
-        String cbkHomePageDropDown1MenuCountOfElements = driver.findElement(cbkHomePageDropDown1Menu).getAttribute("childElementCount");
-        Assert.assertEquals(cbkHomePageDropDown1MenuCountOfElements, "12");
+        try {
+            driver.findElement(cbkHomePageDropDown1).click();
+            String cbkHomePageDropDown1MenuCountOfElements = driver.findElement(cbkHomePageDropDown1Menu).getAttribute("childElementCount");
+            Assert.assertEquals(cbkHomePageDropDown1MenuCountOfElements, "12");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageDropDown2SmokeTesting () {
-        driver.findElement(cbkHomePageDropDown2).click();
-        String cbkHomePageDropDown2MenuCountOfElements = driver.findElement(cbkHomePageDropDown2Menu).getAttribute("childElementCount");
-        Assert.assertEquals(cbkHomePageDropDown2MenuCountOfElements, "14");
+        try {
+            driver.findElement(cbkHomePageDropDown2).click();
+            String cbkHomePageDropDown2MenuCountOfElements = driver.findElement(cbkHomePageDropDown2Menu).getAttribute("childElementCount");
+            Assert.assertEquals(cbkHomePageDropDown2MenuCountOfElements, "14");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageDropDown3SmokeTesting () {
-        driver.findElement(cbkHomePageDropDown3).click();
-        String cbkHomePageDropDown3MenuCountOfElements = driver.findElement(cbkHomePageDropDown3Menu).getAttribute("childElementCount");
-        Assert.assertEquals(cbkHomePageDropDown3MenuCountOfElements, "10");
+        try {
+            driver.findElement(cbkHomePageDropDown3).click();
+            String cbkHomePageDropDown3MenuCountOfElements = driver.findElement(cbkHomePageDropDown3Menu).getAttribute("childElementCount");
+            Assert.assertEquals(cbkHomePageDropDown3MenuCountOfElements, "10");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageLink1SmokeTesting () {
-        driver.findElement(cbkHomePageLink1).click();
-        String cbkHomePageLink1TitleOfLink = driver.getTitle();
-        Assert.assertEquals(cbkHomePageLink1TitleOfLink, "Контакты - Коммерческий банк КЫРГЫЗСТАН");
+        try {
+            driver.findElement(cbkHomePageLink1).click();
+            String cbkHomePageLink1TitleOfLink = driver.getTitle();
+            Assert.assertEquals(cbkHomePageLink1TitleOfLink, "Контакты - Коммерческий банк КЫРГЫЗСТАН");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageLink2SmokeTesting () {
-        driver.findElement(cbkHomePageLink2).click();
-        String cbkHomePageLink2TitleOfLink = driver.getTitle();
-        Assert.assertEquals(cbkHomePageLink2TitleOfLink, "Реализуемое имущество - Коммерческий банк КЫРГЫЗСТАН");
+        try {
+            driver.findElement(cbkHomePageLink2).click();
+            String cbkHomePageLink2TitleOfLink = driver.getTitle();
+            Assert.assertEquals(cbkHomePageLink2TitleOfLink, "Реализуемое имущество - Коммерческий банк КЫРГЫЗСТАН");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void cbkHomePageLink3SmokeTesting () {
-        driver.findElement(cbkHomePageLink3).click();
-        String cbkHomePageLink3TitleOfLink = driver.getTitle();
-        Assert.assertEquals(cbkHomePageLink3TitleOfLink, "Документы - Коммерческий банк КЫРГЫЗСТАН");
+        try {
+            driver.findElement(cbkHomePageLink3).click();
+            String cbkHomePageLink3TitleOfLink = driver.getTitle();
+            Assert.assertEquals(cbkHomePageLink3TitleOfLink, "Документы - Коммерческий банк КЫРГЫЗСТАН");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageLink4SmokeTesting () {
-        driver.findElement(cbkHomePageLink4).click();
-        String cbkHomePageLink4TitleOfLink = driver.getTitle();
-        Assert.assertEquals(cbkHomePageLink4TitleOfLink, "Коммерческий банк КЫРГЫЗСТАН - кредиты, депозиты, открытие счета, карты VISA и денежные переводы");
+        try {
+            driver.findElement(cbkHomePageLink4).click();
+            String cbkHomePageLink4TitleOfLink = driver.getTitle();
+            Assert.assertEquals(cbkHomePageLink4TitleOfLink, "Коммерческий банк КЫРГЫЗСТАН - кредиты, депозиты, открытие счета, карты VISA и денежные переводы");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageDropDown1LinksOfMenuSmokeTesting () {
-        driver.findElement(cbkHomePageDropDown1).click();
-        String actualHomePage = driver.getTitle();
-        String countOfLinksDropDown1String = driver.findElement(cbkHomePageDropDown1Menu).getAttribute("childElementCount");
-        int countOfLinksDropDown1Integer = Integer.parseInt(countOfLinksDropDown1String);
-        for (int i = 1; i < countOfLinksDropDown1Integer; i++) {
-            if (i == 7) {
-                i += 1;
-            }
-            driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[1]/ul/li["+ i +"]/a")).click();
+        try {
             driver.findElement(cbkHomePageDropDown1).click();
-            String nextPage = driver.getTitle();
-            boolean pagesComparison = (actualHomePage != nextPage);
-            Assert.assertEquals(pagesComparison, true);
+            String actualHomePage = driver.getTitle();
+            String countOfLinksDropDown1String = driver.findElement(cbkHomePageDropDown1Menu).getAttribute("childElementCount");
+            int countOfLinksDropDown1Integer = Integer.parseInt(countOfLinksDropDown1String);
+            for (int i = 1; i < countOfLinksDropDown1Integer; i++) {
+                if (i == 7) {
+                    i += 1;
+                }
+                driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[1]/ul/li["+ i +"]/a")).click();
+                driver.findElement(cbkHomePageDropDown1).click();
+                String nextPage = driver.getTitle();
+                boolean pagesComparison = (actualHomePage != nextPage);
+                Assert.assertEquals(pagesComparison, true);
+                Thread.sleep(2000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
     public void cbkHomePageDropDown1LastLinkOfMenuSmokeTesting () {
-        driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[1]/ul/li[12]/a")).click();
-        String titleOfLink = driver.getTitle();
-        Assert.assertEquals(titleOfLink, "Авторизация - Кредит за час");
+        try {
+            driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[1]/ul/li[12]/a")).click();
+            String titleOfLink = driver.getTitle();
+            Assert.assertEquals(titleOfLink, "Авторизация - Кредит за час");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageDropDown2LinksOfMenuSmokeTesting () {
-        driver.findElement(cbkHomePageDropDown2).click();
-        String actualHomePage = driver.getTitle();
-        String countOfLinksDropDown2String = driver.findElement(cbkHomePageDropDown2Menu).getAttribute("childElementCount");
-        int countOfLinksDropDown2Integer = Integer.parseInt(countOfLinksDropDown2String);
-        for (int i = 1; i < countOfLinksDropDown2Integer; i++) {
-            if (i == 6) {
-                i += 1;
-            }
-            driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[2]/ul/li["+ i +"]/a")).click();
-            if (i == 9) {
-                driver.get("https://cbk.kg/");
-            }
-            if (i == 12) {
-                driver.get("https://cbk.kg/");
-            }
-            if (i == 13) {
-                driver.get("https://cbk.kg/");
-            }
+        try {
             driver.findElement(cbkHomePageDropDown2).click();
-            String nextPage = driver.getTitle();
-            boolean pagesComparison = (actualHomePage != nextPage);
-            Assert.assertEquals(pagesComparison, true);
+            String actualHomePage = driver.getTitle();
+            String countOfLinksDropDown2String = driver.findElement(cbkHomePageDropDown2Menu).getAttribute("childElementCount");
+            int countOfLinksDropDown2Integer = Integer.parseInt(countOfLinksDropDown2String);
+            for (int i = 1; i < countOfLinksDropDown2Integer; i++) {
+                if (i == 6) {
+                    i += 1;
+                }
+                driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[2]/ul/li["+ i +"]/a")).click();
+                if (i == 9) {
+                    driver.get("https://cbk.kg/");
+                }
+                if (i == 12) {
+                    driver.get("https://cbk.kg/");
+                }
+                if (i == 13) {
+                    driver.get("https://cbk.kg/");
+                }
+                driver.findElement(cbkHomePageDropDown2).click();
+                String nextPage = driver.getTitle();
+                boolean pagesComparison = (actualHomePage != nextPage);
+                Assert.assertEquals(pagesComparison, true);
+                Thread.sleep(2000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
     public void cbkHomePageDropDown2LastLinkOfMenuSmokeTesting () {
-        driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[2]/ul/li[14]/a")).click();
-        String titleOfLink = driver.getTitle();
-        Assert.assertEquals(titleOfLink, "Тарифы - Коммерческий банк КЫРГЫЗСТАН");
+        try {
+            driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[2]/ul/li[14]/a")).click();
+            String titleOfLink = driver.getTitle();
+            Assert.assertEquals(titleOfLink, "Тарифы - Коммерческий банк КЫРГЫЗСТАН");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageDropDown3LinksOfMenuSmokeTesting () {
-        driver.findElement(cbkHomePageDropDown3).click();
-        String actualHomePage = driver.getTitle();
-        String countOfLinksDropDown3String = driver.findElement(cbkHomePageDropDown3Menu).getAttribute("childElementCount");
-        int countOfLinksDropDown3Integer = Integer.parseInt(countOfLinksDropDown3String);
-        for (int i = 1; i < countOfLinksDropDown3Integer; i++) {
-            if (i == 8) {
-                i += 1;
-            }
-            driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[3]/ul/li["+ i +"]/a")).click();
+        try {
             driver.findElement(cbkHomePageDropDown3).click();
-            String nextPage = driver.getTitle();
-            boolean pagesComparison = (actualHomePage != nextPage);
-            Assert.assertEquals(pagesComparison, true);
+            String actualHomePage = driver.getTitle();
+            String countOfLinksDropDown3String = driver.findElement(cbkHomePageDropDown3Menu).getAttribute("childElementCount");
+            int countOfLinksDropDown3Integer = Integer.parseInt(countOfLinksDropDown3String);
+            for (int i = 1; i < countOfLinksDropDown3Integer; i++) {
+                if (i == 8) {
+                    i += 1;
+                }
+                driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[3]/ul/li["+ i +"]/a")).click();
+                driver.findElement(cbkHomePageDropDown3).click();
+                String nextPage = driver.getTitle();
+                boolean pagesComparison = (actualHomePage != nextPage);
+                Assert.assertEquals(pagesComparison, true);
+            }
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
     public void cbkHomePageDropDown3LastLinkOfMenuSmokeTesting () {
-        driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[3]/ul/li[10]/a")).click();
-        String titleOfLink = driver.getTitle();
-        Assert.assertEquals(titleOfLink, "Банкоматы - Коммерческий банк КЫРГЫЗСТАН");
+        try {
+            driver.findElement(By.xpath("//*[@id=\"cbk-navbar-collapse\"]/ul[1]/li[3]/ul/li[10]/a")).click();
+            String titleOfLink = driver.getTitle();
+            Assert.assertEquals(titleOfLink, "Банкоматы - Коммерческий банк КЫРГЫЗСТАН");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageSliderSmokeTesting () {
         String countOfSliderButtonsString = driver.findElement(cbkHomePageSliderContainer).getAttribute("childElementCount");
         int countOfSliderButtonsInteger = Integer.parseInt(countOfSliderButtonsString);
         String actualHomePage = driver.getTitle();
-        for (int i = 1; i <= countOfSliderButtonsInteger; i++) {
-            try {
-                driver.findElement(By.xpath("//*[@id=\"carousel-homepage\"]/ol/li["+ i +"]")).click();
-                driver.findElement(By.xpath("//*[@class=\"item active\"]")).click();
-                String nextHomePage = driver.getTitle();
-                boolean pagesAssertion = (actualHomePage != nextHomePage);
-                Assert.assertEquals(pagesAssertion, true);
-                Thread.sleep(1000);
-                driver.get("https://cbk.kg/");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        try {
+            for (int i = 1; i <= countOfSliderButtonsInteger; i++) {
+                try {
+                    driver.findElement(By.xpath("//*[@id=\"carousel-homepage\"]/ol/li["+ i +"]")).click();
+                    driver.findElement(By.xpath("//*[@class=\"item active\"]")).click();
+                    String nextHomePage = driver.getTitle();
+                    boolean pagesAssertion = (actualHomePage != nextHomePage);
+                    Assert.assertEquals(pagesAssertion, true);
+                    Thread.sleep(1000);
+                    driver.get("https://cbk.kg/");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
     public void cbkHomePageAtmLinkSmokeTesting () {
-        driver.findElement(cbkHomePageATMLink).click();
-        String nameOfATMTables = driver.findElement(By.xpath("//*[@id=\"map-items-list\"]/h2")).getText();
-        Assert.assertEquals(nameOfATMTables, "БАНКОМАТЫ, ОБСЛУЖИВАЮЩИЕ КАРТЫ ЭЛКАРТ, ЗОЛОТАЯ КОРОНА, VISA, MASTERCARD, МИР И CHINA UNION PAY:");
+        try {
+            driver.findElement(cbkHomePageATMLink).click();
+            String nameOfATMTables = driver.findElement(By.xpath("//*[@id=\"map-items-list\"]/h2")).getText();
+            Assert.assertEquals(nameOfATMTables, "БАНКОМАТЫ, ОБСЛУЖИВАЮЩИЕ КАРТЫ ЭЛКАРТ, ЗОЛОТАЯ КОРОНА, VISA, MASTERCARD, МИР И CHINA UNION PAY:");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageHomePageButtonSmokeTesting () {
-        driver.findElement(cbkHomePageHomePageButton).click();
-        String pageAssertion = driver.getTitle();
-        Assert.assertEquals(pageAssertion, "Коммерческий банк КЫРГЫЗСТАН");
+        try {
+            driver.findElement(cbkHomePageHomePageButton).click();
+            String pageAssertion = driver.getTitle();
+            Assert.assertEquals(pageAssertion, "Коммерческий банк КЫРГЫЗСТАН");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageLanguageLinksSmokeTesting () {
-        String homePageTitle = driver.getTitle();
-        boolean pagesComparisonAssertion;
-        String countOfElementsString = driver.findElement(cbkHomePageLanguageLinkContainer).getAttribute("childElementCount");
-        int countOfElementsInteger = Integer.parseInt(countOfElementsString);
-        for (int i = 1; i <= countOfElementsInteger; i++) {
-            driver.findElement(By.xpath("//*[@id=\"header\"]/div[1]/div[1]/a["+i+"]")).click();
-            String nextPageTitle = driver.getTitle();
-            pagesComparisonAssertion = (homePageTitle != nextPageTitle);
-            Assert.assertEquals(pagesComparisonAssertion, true);
+        try {
+            String homePageTitle = driver.getTitle();
+            boolean pagesComparisonAssertion;
+            String countOfElementsString = driver.findElement(cbkHomePageLanguageLinkContainer).getAttribute("childElementCount");
+            int countOfElementsInteger = Integer.parseInt(countOfElementsString);
+            for (int i = 1; i <= countOfElementsInteger; i++) {
+                driver.findElement(By.xpath("//*[@id=\"header\"]/div[1]/div[1]/a["+i+"]")).click();
+                String nextPageTitle = driver.getTitle();
+                pagesComparisonAssertion = (homePageTitle != nextPageTitle);
+                Assert.assertEquals(pagesComparisonAssertion, true);
+            }
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -260,8 +398,11 @@ public class cbkKGHomePage {
             String buttonStatusActive = driver.findElement(cbkHomePageCashRatingTableButton).getDomAttribute("class");
             statusAssertion = (buttonStatusInactive != buttonStatusActive);
             Assert.assertEquals(statusAssertion, true);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -274,8 +415,11 @@ public class cbkKGHomePage {
             String buttonStatusActive = driver.findElement(cbkHomePageFaresTabButton).getDomAttribute("class");
             statusAssertion = (buttonStatusInactive != buttonStatusActive);
             Assert.assertEquals(statusAssertion, true);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -288,8 +432,11 @@ public class cbkKGHomePage {
             String buttonStatusActive = driver.findElement(cbkHomePageGoldTabButton).getDomAttribute("class");
             statusAssertion = (buttonStatusInactive != buttonStatusActive);
             Assert.assertEquals(statusAssertion, true);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -302,8 +449,11 @@ public class cbkKGHomePage {
             String nextTitle = driver.getTitle();
             titleAssertion = (actualTitle != nextTitle);
             Assert.assertEquals(titleAssertion, true);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -316,8 +466,11 @@ public class cbkKGHomePage {
             String nextTitle = driver.getTitle();
             titleAssertion = (actualTitle != nextTitle);
             Assert.assertEquals(titleAssertion, true);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -330,8 +483,11 @@ public class cbkKGHomePage {
             String nextTitle = driver.getTitle();
             titleAssertion = (actualTitle != nextTitle);
             Assert.assertEquals(titleAssertion, true);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -344,8 +500,11 @@ public class cbkKGHomePage {
             String nextTitle = driver.getTitle();
             titleAssertion = (actualTitle != nextTitle);
             Assert.assertEquals(titleAssertion, true);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -358,8 +517,11 @@ public class cbkKGHomePage {
             String nextTitle = driver.getTitle();
             titleAssertion = (actualTitle != nextTitle);
             Assert.assertEquals(titleAssertion, true);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -372,8 +534,11 @@ public class cbkKGHomePage {
             String nextTitle = driver.getTitle();
             titleAssertion = (actualTitle != nextTitle);
             Assert.assertEquals(titleAssertion, true);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -391,29 +556,46 @@ public class cbkKGHomePage {
                 Assert.assertEquals(pagesComparison, true);
                 driver.get("https://cbk.kg/ru");
             }
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
     public void cbkHomePageNewsListMoreLinkSmokeTesting () {
-        boolean pagesComparison;
-        String actualPageTitle = driver.getTitle();
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[3]/div[2]/p/a")).click();
-        String nextPageTitle = driver.getTitle();
-        pagesComparison = (actualPageTitle != nextPageTitle);
-        Assert.assertEquals(pagesComparison, true);
-        driver.get("https://cbk.kg/");
+        try {
+            boolean pagesComparison;
+            String actualPageTitle = driver.getTitle();
+            driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[3]/div[2]/p/a")).click();
+            String nextPageTitle = driver.getTitle();
+            pagesComparison = (actualPageTitle != nextPageTitle);
+            Assert.assertEquals(pagesComparison, true);
+            driver.get("https://cbk.kg/");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageVacanciesListAllVacanciesLinkSmokeTesting () {
-        boolean pagesComparison;
-        String actualPageTitle = driver.getTitle();
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[3]/div[3]/p/a")).click();
-        String nextPageTitle = driver.getTitle();
-        pagesComparison = (actualPageTitle != nextPageTitle);
-        Assert.assertEquals(pagesComparison, true);
-        driver.get("https://cbk.kg/");
+        try {
+            boolean pagesComparison;
+            String actualPageTitle = driver.getTitle();
+            driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[3]/div[3]/p/a")).click();
+            String nextPageTitle = driver.getTitle();
+            pagesComparison = (actualPageTitle != nextPageTitle);
+            Assert.assertEquals(pagesComparison, true);
+            driver.get("https://cbk.kg/");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageVacanciesListSmokeTesting () {
@@ -430,8 +612,11 @@ public class cbkKGHomePage {
                 Thread.sleep(500);
                 driver.get("https://cbk.kg/ru");
             }
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -443,8 +628,11 @@ public class cbkKGHomePage {
             Thread.sleep(1500);
             String buttonAnimationStatus = whatsappButton.getCssValue("right");
             Assert.assertEquals(buttonAnimationStatus, "0px");
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -456,21 +644,38 @@ public class cbkKGHomePage {
             Thread.sleep(1500);
             String buttonAnimationStatus = telegramButton.getCssValue("right");
             Assert.assertEquals(buttonAnimationStatus, "0px");
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
     public void cbkHomePageWhatsAppButtonSmokeTesting () {
-        driver.findElement(cbkHomePageWhatsAppAnimatedButton).click();
-        String newPageH1 = driver.findElement(By.xpath("//*[@id=\"main_block\"]/div[1]/div[1]/h1")).getText();
-        Assert.assertEquals(newPageH1, "ОАО \"Коммерческий банк КЫРГЫЗСТАН\"");
+        try {
+            driver.findElement(cbkHomePageWhatsAppAnimatedButton).click();
+            String newPageH1 = driver.findElement(By.xpath("//*[@id=\"main_block\"]/div[1]/div[1]/h1")).getText();
+            Assert.assertEquals(newPageH1, "ОАО \"Коммерческий банк КЫРГЫЗСТАН\"");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageTelegramButtonSmokeTesting () {
-        driver.findElement(cbkHomePageTelegramAnimatedButton).click();
-        String newPageH1 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/span")).getText();
-        Assert.assertEquals(newPageH1, "Коммерческий банк \"КЫРГЫЗСТАН\"");
+        try {
+            driver.findElement(cbkHomePageTelegramAnimatedButton).click();
+            String newPageH1 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/span")).getText();
+            Assert.assertEquals(newPageH1, "Коммерческий банк \"КЫРГЫЗСТАН\"");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
 
     public void cbkHomePageChatButtonSmokeTesting() {
@@ -483,8 +688,11 @@ public class cbkKGHomePage {
             Thread.sleep(500);
             Assert.assertEquals(chatOutput, "Вас приветствует Контакт-центр ОАО «Коммерческий банк КЫРГЫЗСТАН»! В целях оперативного получения информации, отправьте цифру вопроса, который Вас интересует (от 1-го до 10-ти)");
             driver.findElement(By.xpath("//*[@id=\"jivo_close_button\"]/jdiv")).click();
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
@@ -513,18 +721,24 @@ public class cbkKGHomePage {
             nextPageTitle = driver.getTitle();
             pagesComparison = (actualPageTitle != nextPageTitle);
             Assert.assertEquals(pagesComparison, true);
-            Thread.sleep(500);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            driver.quit();
         }
     }
 
     public void cbkHomePageInstallmentsButtonSmokeTesting() {
-        driver.findElement(cbkHomePageInstallmentsButton).click();
-        String installmentsH1 = driver.findElement(By.xpath("//*[@id=\"page-index\"]/div/h1")).getText();
-        Assert.assertEquals(installmentsH1, "ПРИОБРЕТАЙТЕ ТОВАРЫ И УСЛУГИ В РАССРОЧКУ!");
+        try {
+            driver.findElement(cbkHomePageInstallmentsButton).click();
+            String installmentsH1 = driver.findElement(By.xpath("//*[@id=\"page-index\"]/div/h1")).getText();
+            Assert.assertEquals(installmentsH1, "ПРИОБРЕТАЙТЕ ТОВАРЫ И УСЛУГИ В РАССРОЧКУ!");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
     }
-
-
-
 }
