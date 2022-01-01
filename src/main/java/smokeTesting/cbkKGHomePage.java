@@ -455,6 +455,17 @@ public class cbkKGHomePage {
         }
     }
 
+    public void cbkHomePageWhatsAppButtonSmokeTesting () {
+        driver.findElement(cbkHomePageWhatsAppAnimatedButton).click();
+        String newPageH1 = driver.findElement(By.xpath("//*[@id=\"main_block\"]/div[1]/div[1]/h1")).getText();
+        Assert.assertEquals(newPageH1, "ОАО \"Коммерческий банк КЫРГЫЗСТАН\"");
+    }
+
+    public void cbkHomePageTelegramButtonSmokeTesting () {
+        driver.findElement(cbkHomePageTelegramAnimatedButton).click();
+        String newPageH1 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/span")).getText();
+        Assert.assertEquals(newPageH1, "Коммерческий банк \"КЫРГЫЗСТАН\"");
+    }
 
 
 

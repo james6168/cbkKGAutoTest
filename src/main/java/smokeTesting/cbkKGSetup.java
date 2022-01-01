@@ -234,4 +234,18 @@ public class cbkKGSetup {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageTelegramAnimatedButtonAnimationSmokeTesting();
     }
+
+    @Test   //Smoke-тестирование кнопки WhatsApp на главной странице cbk.kg.
+            //Данный автотест проверяет переход на страницу WhatsApp при нажатии на кнопку WhatsApp.
+    public void cbkHomePageWhatsAppButtonSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageWhatsAppButtonSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование кнопки Telegram на главной странице cbk.kg.
+            //Данный автотест проверяет переход на страницу Telegram при нажатии на кнопку Telegram.
+    public void cbkHomePageTelegramButtonSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageTelegramButtonSmokeTesting();
+    }
 }
