@@ -225,13 +225,13 @@ public class cbkKGSetup {
             //Данный автотест проверяет работу анимации при наведении курсора мыши на кнопку. Кнопка должна раскрыться.
     public void cbkHomePageWhatsAppAnimatedButtonAnimationSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
-        objcbkKGHomePage.setCbkHomePageWhatsAppAnimatedButtonAnimationSmokeTesting();
+        objcbkKGHomePage.cbkHomePageWhatsAppAnimatedButtonAnimationSmokeTesting();
     }
 
     @Test   //Smoke-тестирование анимации кнопки Telegram на главной странице cbk.kg.
             //Данный автотест проверяет работу анимации при наведении курсора мыши на кнопку. Кнопка должна раскрыться.
     public void cbkHomePageTelegramAnimatedButtonAnimationSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
-        objcbkKGHomePage.setCbkHomePageTelegramAnimatedButtonAnimationSmokeTesting();
+        objcbkKGHomePage.cbkHomePageTelegramAnimatedButtonAnimationSmokeTesting();
     }
 }

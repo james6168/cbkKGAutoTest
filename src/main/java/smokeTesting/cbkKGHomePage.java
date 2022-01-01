@@ -429,7 +429,7 @@ public class cbkKGHomePage {
         }
     }
 
-    public void setCbkHomePageWhatsAppAnimatedButtonAnimationSmokeTesting () {
+    public void cbkHomePageWhatsAppAnimatedButtonAnimationSmokeTesting () {
         Actions userActions = new Actions(driver);
         WebElement whatsappButton = driver.findElement(cbkHomePageWhatsAppAnimatedButton);
         userActions.moveToElement(whatsappButton).build().perform();
@@ -442,7 +442,7 @@ public class cbkKGHomePage {
         }
     }
 
-    public void setCbkHomePageTelegramAnimatedButtonAnimationSmokeTesting () {
+    public void cbkHomePageTelegramAnimatedButtonAnimationSmokeTesting () {
         Actions userActions = new Actions(driver);
         WebElement telegramButton = driver.findElement(cbkHomePageTelegramAnimatedButton);
         userActions.moveToElement(telegramButton).build().perform();
@@ -454,6 +454,8 @@ public class cbkKGHomePage {
             e.printStackTrace();
         }
     }
+
+
 
 
 }
