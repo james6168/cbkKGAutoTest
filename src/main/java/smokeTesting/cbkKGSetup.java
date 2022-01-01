@@ -255,4 +255,11 @@ public class cbkKGSetup {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageChatButtonSmokeTesting();
     }
+
+    @Test   //Smoke-тестирование кнопок социальных сетей.
+            //Данный автотест провряет переход на страницы социальных сетей при нажатии на кнопки.
+    public void cbkHomePageSocialButtonsSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageSocialButtonsSmokeTesting();
+    }
 }

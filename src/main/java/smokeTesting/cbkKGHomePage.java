@@ -59,7 +59,11 @@ public class cbkKGHomePage {
     By cbkHomePageTelegramAnimatedButton = By.xpath("//*[@id=\"telegram-fixed\"]");
     //===================================================================================================
     By cbkHomePageChatButton = By.xpath("//*[@id=\"jvlabelWrap\"]/jdiv[1]");
-
+    //===================================================================================================
+    By cbkHomePageYouTubeButton = By.xpath("//*[@id=\"footer\"]/div[1]/div/div/div[2]/ul/li[4]/a[3]");
+    By cbkHomePageInstagramButton = By.xpath("//*[@id=\"footer\"]/div[1]/div/div/div[2]/ul/li[4]/a[2]");
+    By cbkHomePageFacebookButton = By.xpath("//*[@id=\"footer\"]/div[1]/div/div/div[2]/ul/li[4]/a[1]");
+    //===================================================================================================
     public cbkKGHomePage (WebDriver driver) {
         this.driver = driver;
     }
@@ -478,6 +482,37 @@ public class cbkKGHomePage {
             Thread.sleep(500);
             Assert.assertEquals(chatOutput, "Вас приветствует Контакт-центр ОАО «Коммерческий банк КЫРГЫЗСТАН»! В целях оперативного получения информации, отправьте цифру вопроса, который Вас интересует (от 1-го до 10-ти)");
             driver.findElement(By.xpath("//*[@id=\"jivo_close_button\"]/jdiv")).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cbkHomePageSocialButtonsSmokeTesting () {
+        String actualPageTitle = driver.getTitle();
+        boolean pagesComparison;
+        try {
+            driver.findElement(cbkHomePageYouTubeButton).click();
+            Thread.sleep(1500);
+            String nextPageTitle = driver.getTitle();
+            pagesComparison = (actualPageTitle != nextPageTitle);
+            Assert.assertEquals(pagesComparison, true);
+            Thread.sleep(500);
+
+            driver.get("https://cbk.kg/");
+            driver.findElement(cbkHomePageInstagramButton).click();
+            Thread.sleep(1500);
+            nextPageTitle = driver.getTitle();
+            pagesComparison = (actualPageTitle != nextPageTitle);
+            Assert.assertEquals(pagesComparison, true);
+            Thread.sleep(500);
+
+            driver.get("https://cbk.kg/");
+            driver.findElement(cbkHomePageFacebookButton).click();
+            Thread.sleep(1500);
+            nextPageTitle = driver.getTitle();
+            pagesComparison = (actualPageTitle != nextPageTitle);
+            Assert.assertEquals(pagesComparison, true);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
