@@ -262,4 +262,11 @@ public class cbkKGSetup {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageSocialButtonsSmokeTesting();
     }
+
+    @Test   //Smoke-тестирование кнопки "Рассрочка товаров и услуг" на главной странице cbk.kg.
+            //Данный автотест проверяет переход на страницу рассчрочек при нажатии на кнопку.
+    public void cbkHomePageInstallmentsButtonSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageInstallmentsButtonSmokeTesting();
+    }
 }

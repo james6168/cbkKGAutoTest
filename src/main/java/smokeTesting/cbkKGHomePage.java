@@ -64,6 +64,7 @@ public class cbkKGHomePage {
     By cbkHomePageInstagramButton = By.xpath("//*[@id=\"footer\"]/div[1]/div/div/div[2]/ul/li[4]/a[2]");
     By cbkHomePageFacebookButton = By.xpath("//*[@id=\"footer\"]/div[1]/div/div/div[2]/ul/li[4]/a[1]");
     //===================================================================================================
+    By cbkHomePageInstallmentsButton = By.xpath("//*[@id=\"footer_discounts\"]");
     public cbkKGHomePage (WebDriver driver) {
         this.driver = driver;
     }
@@ -516,6 +517,12 @@ public class cbkKGHomePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void cbkHomePageInstallmentsButtonSmokeTesting() {
+        driver.findElement(cbkHomePageInstallmentsButton).click();
+        String installmentsH1 = driver.findElement(By.xpath("//*[@id=\"page-index\"]/div/h1")).getText();
+        Assert.assertEquals(installmentsH1, "ПРИОБРЕТАЙТЕ ТОВАРЫ И УСЛУГИ В РАССРОЧКУ!");
     }
 
 
