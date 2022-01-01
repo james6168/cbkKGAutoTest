@@ -248,4 +248,11 @@ public class cbkKGSetup {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageTelegramButtonSmokeTesting();
     }
+
+    @Test   //Smoke-тестирование кнопок чата на главной странице cbk.kg.
+            //Данный автотест проверяет работу кнопок чата.
+    public void cbkHomePageChatButtonSmokeTesting () {
+        objcbkKGHomePage = new cbkKGHomePage(driver);
+        objcbkKGHomePage.cbkHomePageChatButtonSmokeTesting();
+    }
 }

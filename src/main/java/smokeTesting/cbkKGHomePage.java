@@ -58,6 +58,7 @@ public class cbkKGHomePage {
     By cbkHomePageWhatsAppAnimatedButton = By.xpath("//*[@id=\"whatsapp-fixed\"]");
     By cbkHomePageTelegramAnimatedButton = By.xpath("//*[@id=\"telegram-fixed\"]");
     //===================================================================================================
+    By cbkHomePageChatButton = By.xpath("//*[@id=\"jvlabelWrap\"]/jdiv[1]");
 
     public cbkKGHomePage (WebDriver driver) {
         this.driver = driver;
@@ -465,6 +466,21 @@ public class cbkKGHomePage {
         driver.findElement(cbkHomePageTelegramAnimatedButton).click();
         String newPageH1 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/span")).getText();
         Assert.assertEquals(newPageH1, "Коммерческий банк \"КЫРГЫЗСТАН\"");
+    }
+
+    public void cbkHomePageChatButtonSmokeTesting() {
+        try {
+            driver.findElement(cbkHomePageChatButton).click();
+            Thread.sleep(500);
+            driver.findElement(By.xpath("//*[@id=\"scrollbar-container\"]/jdiv[1]/jdiv/jdiv/jdiv[1]")).click();
+            Thread.sleep(500);
+            String chatOutput = driver.findElement(By.xpath("//*[@id=\"scrollbar-container\"]/jdiv[1]/jdiv/jdiv[2]/jdiv[3]/jdiv/jdiv[1]/jdiv[1]")).getText();
+            Thread.sleep(500);
+            Assert.assertEquals(chatOutput, "Вас приветствует Контакт-центр ОАО «Коммерческий банк КЫРГЫЗСТАН»! В целях оперативного получения информации, отправьте цифру вопроса, который Вас интересует (от 1-го до 10-ти)");
+            driver.findElement(By.xpath("//*[@id=\"jivo_close_button\"]/jdiv")).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
