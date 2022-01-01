@@ -388,6 +388,26 @@ public class cbkKGHomePage {
         }
     }
 
+    public void cbkHomePageNewsListMoreLinkSmokeTesting () {
+        boolean pagesComparison;
+        String actualPageTitle = driver.getTitle();
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[3]/div[2]/p/a")).click();
+        String nextPageTitle = driver.getTitle();
+        pagesComparison = (actualPageTitle != nextPageTitle);
+        Assert.assertEquals(pagesComparison, true);
+        driver.get("https://cbk.kg/");
+    }
+
+    public void cbkHomePageVacanciesListAllVacanciesLinkSmokeTesting () {
+        boolean pagesComparison;
+        String actualPageTitle = driver.getTitle();
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[3]/div[3]/p/a")).click();
+        String nextPageTitle = driver.getTitle();
+        pagesComparison = (actualPageTitle != nextPageTitle);
+        Assert.assertEquals(pagesComparison, true);
+        driver.get("https://cbk.kg/");
+    }
+
     public void cbkHomePageVacanciesListSmokeTesting () {
         try {
             boolean pagesComparison;

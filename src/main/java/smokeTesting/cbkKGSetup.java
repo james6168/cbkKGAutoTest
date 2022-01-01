@@ -210,6 +210,7 @@ public class cbkKGSetup {
     public void cbkHomePageNewsListSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageNewsListSmokeTesting();
+        objcbkKGHomePage.cbkHomePageNewsListMoreLinkSmokeTesting();
     }
 
     @Test   //Smoke-тестирование ссылок раздела "Вакансии" домашней страницы cbk.kg.
@@ -217,6 +218,7 @@ public class cbkKGSetup {
     public void cbkHomePageVacanciesListSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageVacanciesListSmokeTesting();
+        objcbkKGHomePage.cbkHomePageVacanciesListAllVacanciesLinkSmokeTesting();
     }
 
 
