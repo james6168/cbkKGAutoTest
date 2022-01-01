@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -54,8 +55,9 @@ public class cbkKGHomePage {
     By cbkHomePageNewsList = By.xpath("//*[@id=\"content\"]/div/div[3]/div[2]/ul");
     By cbkHomePageVacanciesList = By.xpath("//*[@id=\"content\"]/div/div[3]/div[3]/ul");
     //===================================================================================================
-
-
+    By cbkHomePageWhatsAppAnimatedButton = By.xpath("//*[@id=\"whatsapp-fixed\"]");
+    By cbkHomePageTelegramAnimatedButton = By.xpath("//*[@id=\"telegram-fixed\"]");
+    //===================================================================================================
 
     public cbkKGHomePage (WebDriver driver) {
         this.driver = driver;
@@ -426,4 +428,32 @@ public class cbkKGHomePage {
             e.printStackTrace();
         }
     }
+
+    public void setCbkHomePageWhatsAppAnimatedButtonAnimationSmokeTesting () {
+        Actions userActions = new Actions(driver);
+        WebElement whatsappButton = driver.findElement(cbkHomePageWhatsAppAnimatedButton);
+        userActions.moveToElement(whatsappButton).build().perform();
+        try {
+            Thread.sleep(1500);
+            String buttonAnimationStatus = whatsappButton.getCssValue("right");
+            Assert.assertEquals(buttonAnimationStatus, "0px");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setCbkHomePageTelegramAnimatedButtonAnimationSmokeTesting () {
+        Actions userActions = new Actions(driver);
+        WebElement telegramButton = driver.findElement(cbkHomePageTelegramAnimatedButton);
+        userActions.moveToElement(telegramButton).build().perform();
+        try {
+            Thread.sleep(1500);
+            String buttonAnimationStatus = telegramButton.getCssValue("right");
+            Assert.assertEquals(buttonAnimationStatus, "0px");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
