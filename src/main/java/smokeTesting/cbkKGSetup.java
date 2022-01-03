@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class cbkKGSetup {
     WebDriver driver;
     cbkKGHomePage objcbkKGHomePage;
+    cbkKGibankPage objcbkKGibankPage;
 
     @BeforeTest
     public void setup () {
@@ -268,5 +269,43 @@ public class cbkKGSetup {
     public void cbkHomePageInstallmentsButtonSmokeTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
         objcbkKGHomePage.cbkHomePageInstallmentsButtonSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование полей логина и пароля сайта ibank.cbk.kg.
+            //Данный автотест вводит стандартные значения в поля "Логин" и "Пароль".
+            // Вводимые значения для логина: "james18q", для пароля: "156236qZart".
+    public void cbkibankLoginPasswordSmokeTesting () {
+        objcbkKGibankPage = new cbkKGibankPage(driver);
+        objcbkKGibankPage.cbkibankLoginPasswordSmokeTesting();
+    }
+
+    @Test   //Тестирование граничных значений полей логина и пароля сайта ibank.cbk.kg.
+            //Данный автотест вводит граничные значения в поля "Логин" и "Пароль".
+            // Вводимые значения превышают максимально допустимое количество символов.
+    public void cbkibankLoginPasswordBoundaryValuesTesting1() {
+        objcbkKGibankPage = new cbkKGibankPage(driver);
+        objcbkKGibankPage.cbkibankLoginPasswordBoundaryValuesTesting1();
+    }
+
+    @Test   //Тестирование граничных значений полей логина и пароля сайта ibank.cbk.kg.
+            //Данный автотест вводит граничные значения в поля "Логин" и "Пароль".
+            // Вводимые значения содержат пустое количество количество символов.
+    public void cbkibankLoginPasswordBoundaryValuesTesting2() {
+        objcbkKGibankPage = new cbkKGibankPage(driver);
+        objcbkKGibankPage.cbkibankLoginPasswordBoundaryValuesTesting2();
+    }
+
+    @Test   //Тестирование некорректных значений полей логина и пароля сайта ibank.cbk.kg.
+            //Данный автотест вводит некорректные значения в поля "Логин" и "Пароль".
+            // Вводимые значения содержат специальные символы.
+    public void cbkibankLoginPasswordNegativeTesting() {
+        objcbkKGibankPage = new cbkKGibankPage(driver);
+        objcbkKGibankPage.cbkibankLoginPasswordNegativeValuesTesting();
+    }
+
+    @Test   //Smoke-тестирование ссылки "Помощь" сайта ibank.cbk.kg.
+    public void cbkibankHelpLinkSmokeTesting () {
+        objcbkKGibankPage = new cbkKGibankPage(driver);
+        objcbkKGibankPage.cbkibankHelpLinkSmokeTesting();
     }
 }

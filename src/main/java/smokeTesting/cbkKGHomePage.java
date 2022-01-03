@@ -738,7 +738,6 @@ public class cbkKGHomePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            driver.quit();
         }
     }
 }
