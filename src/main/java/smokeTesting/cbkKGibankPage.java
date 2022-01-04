@@ -11,10 +11,8 @@ public class cbkKGibankPage {
     By cbkibankLoginInput = By.xpath("//*[@id=\"consumerForm\"]/li[1]/div/input");
     By cbkibankPasswordInput = By.xpath("//*[@id=\"consumerForm\"]/li[2]/div/input");
     By cbkibankLoginButton = By.xpath("//*[@id=\"consumerForm\"]/li[3]/table/tbody/tr/td[2]/input");
-    By cbkibankHeaderLogo = By.xpath("//*[@id=\"logoHeader\"]");
     By cbkibankHelpLink = By.xpath("//*[@id=\"languageOnlyHeader\"]/div/a[1]");
     By cbkibankLanguagesLink = By.xpath("//*[@id=\"switchLanguageLink\"]");
-    By cbkibankAboutServiceLink = By.xpath("//*[@id=\"id1\"]/div[4]/div[1]/a");
 
     public cbkKGibankPage(WebDriver driver) {
         this.driver = driver;
@@ -97,13 +95,68 @@ public class cbkKGibankPage {
     public void cbkibankHelpLinkSmokeTesting () {
         try {
             driver.get("https://ibank.cbk.kg/portal/login;jsessionid=2B50C138CB7953A0BC5D4DDA5C8E5C41");
+            String actualPageTitle = driver.getTitle();
+            boolean pagesComparison;
             driver.findElement(cbkibankHelpLink).click();
-            String nextPageH1 = driver.findElement(By.xpath("//*[@id=\"mbank\"]/div[2]/div/div/div[2]/h3")).getText();
-            Assert.assertEquals(nextPageH1, "Простой и удобный сервис позволяющий управлять своими денежными средствами, оплачивать около 300 услуг, совершать переводы между счетами, получать информацию об операциях по Вашим счетам и многое другое с помощью мобильного телефона в любое время, в любом месте!");
+            String nextPageTitle = driver.getTitle();
+            pagesComparison = (actualPageTitle != nextPageTitle);
+            Assert.assertEquals(pagesComparison, true);
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
+            driver.quit();
         }
     }
+
+    public void cbkibankLanguagesLinkSmokeTesting () {
+        try {
+            driver.get("https://ibank.cbk.kg/portal/login;jsessionid=2B50C138CB7953A0BC5D4DDA5C8E5C41");
+            driver.findElement(cbkibankLanguagesLink).click();
+            String blockOfLanguagesStatus = driver.findElement(By.xpath("//*[@id=\"languageSelector\"]")).getCssValue("display");
+            Thread.sleep(1000);
+            Assert.assertEquals(blockOfLanguagesStatus, "block");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
+    }
+
+    public void cbkibankLanguagesLinkKyrgyzLinkSmokeTesting () {
+        driver.get("https://ibank.cbk.kg/portal/login;jsessionid=2B50C138CB7953A0BC5D4DDA5C8E5C41");
+        try {
+            String actualPageTitle = driver.getTitle();
+            boolean pagesComparison;
+            driver.findElement(cbkibankLanguagesLink).click();
+            driver.findElement(By.xpath("//*[@id=\"language-select\"]/li[1]/a")).click();
+            String nextPageTitle = driver.getTitle();
+            Thread.sleep(1000);
+            pagesComparison = (actualPageTitle != nextPageTitle);
+            Assert.assertEquals(pagesComparison, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
+    }
+
+    public void cbkibankLanguagesLinkEnglishLinkSmokeTesting () {
+        driver.get("https://ibank.cbk.kg/portal/login;jsessionid=2B50C138CB7953A0BC5D4DDA5C8E5C41");
+        try {
+            String actualPageTitle = driver.getTitle();
+            boolean pagesComparison;
+            driver.findElement(cbkibankLanguagesLink).click();
+            driver.findElement(By.xpath("//*[@id=\"language-select\"]/li[3]/a")).click();
+            String nextPageTitle = driver.getTitle();
+            Thread.sleep(1000);
+            pagesComparison = (actualPageTitle != nextPageTitle);
+            Assert.assertEquals(pagesComparison, true);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
+    }
+
 }

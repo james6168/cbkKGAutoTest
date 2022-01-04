@@ -308,4 +308,20 @@ public class cbkKGSetup {
         objcbkKGibankPage = new cbkKGibankPage(driver);
         objcbkKGibankPage.cbkibankHelpLinkSmokeTesting();
     }
+
+    @Test   //Smoke-тестирование ссылки "Языки" сайта ibank.cbk.kg.
+            //Данный автотест проверяет работу анимации отображения блока с языками при нажатии на ссылку "Языки".
+    public void cbkibankLanguagesLinkSmokeTesting () {
+        objcbkKGibankPage = new cbkKGibankPage(driver);
+        objcbkKGibankPage.cbkibankLanguagesLinkSmokeTesting();
+    }
+
+    @Test   //Smoke-тестирование ссылки "Языки" сайта ibank.cbk.kg.
+            //Данный автотест проверяет работу смены языка сайта ibank.cbk.kg с русского на кыргызский при нажатии на ссылку "Кыргызский".
+    public void cbkibankLanguagesLinkKyrgyzLinkSmokeTesting () {
+        objcbkKGibankPage = new cbkKGibankPage(driver);
+        objcbkKGibankPage.cbkibankLanguagesLinkEnglishLinkSmokeTesting();
+    }
+
+
 }
