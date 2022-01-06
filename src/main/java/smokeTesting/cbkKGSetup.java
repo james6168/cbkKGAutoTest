@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-            //С этого класса будет осуществляться запуск отдельных тестов. Commit
+//С этого класса будет осуществляться запуск отдельных тестов.
 public class cbkKGSetup {
     WebDriver driver;
     cbkKGHomePage objcbkKGHomePage;
@@ -15,7 +15,7 @@ public class cbkKGSetup {
 
     @BeforeTest
     public void setup () {
-        System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");//Здесь понятное дело: Вам тут нужно указать свой путь до драйвера SeleniumChromeDriver
+        System.setProperty("webdriver.chrome.driver", "/home/aizhan/.m2/repository/webdriver/chromedriver/linux64/86.0.4240.22/chromedriver");//Здесь понятное дело: Вам тут нужно указать свой путь до драйвера SeleniumChromeDriver
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://cbk.kg/");
