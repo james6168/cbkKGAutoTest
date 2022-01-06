@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-            //С этого класса будет осуществляться запуск отдельных тестов.
+            //С этого класса будет осуществляться запуск отдельных тестов. Commit
 public class cbkKGSetup {
     WebDriver driver;
     cbkKGHomePage objcbkKGHomePage;
