@@ -216,8 +216,6 @@ public class cbkKGHomePage {
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } finally {
-            driver.quit();
         }
     }
 
@@ -262,8 +260,6 @@ public class cbkKGHomePage {
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } finally {
-            driver.quit();
         }
     }
 
@@ -299,8 +295,6 @@ public class cbkKGHomePage {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } finally {
-            driver.quit();
         }
     }
 
