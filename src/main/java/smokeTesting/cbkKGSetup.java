@@ -22,6 +22,11 @@ public class cbkKGSetup {
         driver.get("https://cbk.kg/");
     }
 
+    @AfterTest
+    public void finish () {
+        driver.quit();
+    }
+
     @Test   // Smoke-тестирование поля поиска на главной странице cbk.kg
     public void cbkHomePageSmokeSearchFieldTesting () {
         objcbkKGHomePage = new cbkKGHomePage(driver);
